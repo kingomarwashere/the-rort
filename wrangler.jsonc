@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "the-rort",
+  "compatibility_date": "2026-08-01",
+  // Pure static multi-page site served straight from Cloudflare's asset host — no Worker script needed.
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "rort.theradicalparty.com", "custom_domain": true }]
+}
