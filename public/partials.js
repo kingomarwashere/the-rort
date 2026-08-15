@@ -28,8 +28,25 @@
   const header = document.createElement('header');
   header.className = 'nav';
   header.innerHTML =
-    `<a class="brand" href="/">THE<span>&nbsp;</span>RORT</a><nav>${links}</nav>`;
+    `<a class="brand" href="/">THE<span>&nbsp;</span>RORT</a>` +
+    `<button class="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">` +
+    `<span></span><span></span><span></span></button>` +
+    `<nav id="site-nav">${links}</nav>`;
   document.body.insertBefore(header, document.body.firstChild);
+
+  // Mobile hamburger: toggle the collapsed nav panel.
+  const toggle = header.querySelector('.navtoggle');
+  const navEl = header.querySelector('nav');
+  const setOpen = (open) => {
+    header.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  toggle.addEventListener('click', () => setOpen(!header.classList.contains('open')));
+  // Close after tapping a link, or on Escape.
+  navEl.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  // Reset if the viewport grows back to desktop.
+  window.addEventListener('resize', () => { if (window.innerWidth > 880) setOpen(false); });
 
   // Site-wide consent / direct-democracy call-to-action (before the footer, every page).
   const cta = document.createElement('section');
