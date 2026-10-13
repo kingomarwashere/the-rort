@@ -1,5 +1,5 @@
 :root{
-  --red:#FF2D55;
+  --red:#ff0099;
   --bg:#0B0B09;
   --bg2:#151410;
   --bg3:#1c1a16;
@@ -85,7 +85,7 @@ h3{font-family:var(--syne);font-weight:700;font-size:1.22rem;margin:1.8rem 0 .6r
 .tag{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;font-weight:500;padding:.15rem .5rem;border-radius:3px;border:1px solid var(--line);color:var(--muted);vertical-align:middle;white-space:nowrap}
 .tag.verified{color:var(--green);border-color:rgba(79,227,154,.4)}
 .tag.claim{color:var(--amber);border-color:rgba(255,190,61,.45)}
-.tag.contested{color:var(--red);border-color:rgba(255,45,85,.45)}
+.tag.contested{color:var(--red);border-color:rgba(255,0,153,.45)}
 .tag.reported{color:var(--muted);border-style:dashed}
 
 /* ---- claim cards ---- */
@@ -115,7 +115,7 @@ h3{font-family:var(--syne);font-weight:700;font-size:1.22rem;margin:1.8rem 0 .6r
 .ledger .num-c{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
 
 /* ---- callouts ---- */
-.callout{margin:1.6rem 0;padding:1.35rem 1.6rem;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:0 3px 3px 0;background:rgba(255,45,85,.05);color:var(--body);font-size:1.02rem;line-height:1.6}
+.callout{margin:1.6rem 0;padding:1.35rem 1.6rem;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:0 3px 3px 0;background:rgba(255,0,153,.05);color:var(--body);font-size:1.02rem;line-height:1.6}
 .callout.warn{border-left-color:var(--amber);background:rgba(255,190,61,.06)}
 .callout.warn strong{color:var(--ink)}
 .callout .h{font-family:var(--syne);font-weight:700;color:var(--red);display:block;margin-bottom:.4rem;font-size:1.02rem}
